@@ -17,7 +17,7 @@ class preprocessor:
                 }
 
         self.compressor = JPEGCompressor(self.config['jpeq_quality'])
-
+        self.bit_reducer = bit_reduce(self.config['target_bits'])
 
         def process(self,  image):
             compressed = self.compressor.apply(image)
